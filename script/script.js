@@ -1,13 +1,41 @@
 
 //variables
 var quiz = [];
-quiz[0] = new Question("What is 1/4 of 100?", "25", "24", "23", "20");
-quiz[1] = new Question("What color is blood?", "Red", "White", "Green", "Yellow");
-quiz[2] = new Question("What color is grass?", "Green", "White", "Red", "Blue");
-quiz[3] = new Question("How many legs does a spider have?", "8", "6", "4", "10");
-quiz[4] = new Question("Who is the king of the Netherlands?", "Willem-Alexander", "Willem-Alexzelf", "Willem-Alexniemand", "Frederik");
-quiz[5] = new Question("What is 2-2?", "0", "2", "4", "6");
-quiz[6] = new Question("What was Vincent van Gogh?", "Artist", "Baker", "Jobless", "Musician");
+quiz[0] = new Question("What is the IPv6 address used by OSPFv3 non-DR/BDR routers to send, link-state updates and link-state acknowledgments?",
+"FF02::6",
+"FF02::5",
+"FF02::2",
+"FF02::9");
+quiz[1] = new Question("What color is blood?",
+"Red",
+"White",
+"Green",
+"Yellow");
+quiz[2] = new Question("On an OSPF multiaccess network, which multicast address must a non-DR router use to send an LSU packet that contains new link-state information?",
+"224.0.0.6",
+"224.0.0.1",
+"224.0.0.5",
+"224.0.0.9");
+quiz[3] = new Question("How many legs does a spider have?",
+"8",
+"6",
+"4",
+"10");
+quiz[4] = new Question("Who is the king of the Netherlands?",
+"Willem-Alexander",
+"Willem-Alexzelf",
+"Willem-Alexniemand",
+"Frederik");
+quiz[5] = new Question("What is 2-2?",
+"0",
+"2",
+"4",
+"6");
+quiz[6] = new Question("What was Vincent van Gogh?",
+"Artist",
+"Baker",
+"Jobless",
+"Musician");
 var randomQuestion;
 var answers = [];
 var currentScore = 0;
@@ -80,11 +108,12 @@ function adjustScore(isCorrect) {
 }
 
 function checkAnswer(answer) {
-  if (answer == randomQuestion.rightAnswer) {
-    adjustScore(true);
-    btnProvideQuestion();
-  } else {
-    alert("Loser!");
-    adjustScore(false);
+    if (answer == randomQuestion.rightAnswer) {
+      adjustScore(true);
+      btnProvideQuestion();
+    } else {
+      alert("Incorrect, try again!");
+      adjustScore(false);
+      btnProvideQuestion();
+    }
   }
-}
