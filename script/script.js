@@ -1,3 +1,4 @@
+
 //variables
 var quiz = [];
 quiz[0] = new Question("What is 1/4 of 100?", "25", "24", "23");
